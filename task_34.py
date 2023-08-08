@@ -10,3 +10,21 @@
 # Ввод:                                       Вывод:
 # пара-ра-рам рам-пам-папам па-ра-па-дам      Парам пам-пам
 
+phrase = input('Что напевает Винни-Пух: ').replace('-', '').upper().split()
+vowels = ['У', 'Е', 'Ы', 'А', 'О', 'Э', 'Я', 'И', 'Ю', 'E', 'Y', 'U', 'I', 'O', 'A', 'Ё']
+
+result = list()
+
+for item in phrase:
+    counter = 0
+    for elem in item:
+        if elem in vowels:
+            counter += 1
+    result.append(counter)
+
+
+if len(set(result)) == 1:
+    print('Парам пам-пам')
+else:
+    print('Пам парам')                
+
